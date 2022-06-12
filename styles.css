@@ -35,8 +35,29 @@
 
 .cam-viewport {
     width:100%;
-    max-height: 60%;
+    max-height: 40%;
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.message-label {
+    background: rgb(233, 164, 16);
+    border-radius: 10px;
+    margin: auto;
+    width: 70%;
+}
+
+.message-label p{
+    margin: 0;
+    text-align:center; 
+    font-size: 80px;
+}
+
+.message-label video{
+    width:90%;
+    padding-top:3%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
