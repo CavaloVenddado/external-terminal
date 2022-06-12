@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="pt-BR">
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Problema é teu.</title>
+    <script src="script.js"></script>
 </head>
 <body>
     <style>
@@ -18,7 +19,6 @@
 
         .scroll-left p {
             position: absolute;
-            width: 100%;
             height: 100%;
             margin: 0;
             line-height: 100px;
@@ -41,7 +41,7 @@
         /* Move it (define the animation) */
         @keyframes scroll-left {
             0% {
-                transform: translateX(100%);
+                transform: translateX(60%);
             }
 
             100% {
@@ -56,16 +56,6 @@
     <div>
         <img src="http://192.168.1.19:8081/1" alt="Imagem da câmera externa" class="cam-viewport">
     </div>
-    <script>
-        console.log('Hello World!');
-        var socket = new WebSocket('ws://192.168.1.12:1880/term/socket');
-        socket.onopen = function (event) {
-            console.log('WebSocket is connected.');
-        };
-        socket.onmessage = function (e) {
-            console.log('Server: ' + e.data);
-        };
-    </script>
 </body>
 
 </html>
