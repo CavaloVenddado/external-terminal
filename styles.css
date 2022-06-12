@@ -1,0 +1,42 @@
+.scroll-left {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(60%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroll-left p {
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    line-height: 100px;
+    text-align: center;
+    font-size: 80px;
+    white-space: nowrap;
+    /* Starting position */
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 15s linear infinite;
+}
+
+.cam-viewport {
+    width:100%;
+    max-height: 60%;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
