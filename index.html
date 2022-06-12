@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Problema é teu.</title>
+</head>
 <body>
     <style>
         .scroll-left {
@@ -15,22 +18,30 @@
 
         .scroll-left p {
             position: absolute;
-            width: 280;
+            width: 100%;
             height: 100%;
             margin: 0;
             line-height: 100px;
             text-align: center;
             font-size: 80px;
+            white-space: nowrap;
             /* Starting position */
             transform: translateX(100%);
             /* Apply animation to this element */
             animation: scroll-left 15s linear infinite;
         }
+        
+        .cam-viewport {
+            width:100%;
+            border-radius: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
         /* Move it (define the animation) */
         @keyframes scroll-left {
             0% {
-                transform: translateX(40%);
+                transform: translateX(100%);
             }
 
             100% {
@@ -40,12 +51,10 @@
     </style>
 
     <div class="scroll-left">
-        <p>Bem vindo a robótica Marista! Equipe Cavalo Vendado. Passe o cartão abaixo ou mostre sua face para a camera!</p>
+        <p>Bem vindo a robótica Marista! Equipe Cavalo Vendado. Passe o cartão abaixo ou mostre sua face para a câmera!</p>
     </div>
     <div>
-        <img src="http://192.168.1.19:8081/1" alt="http://192.168.1.19:8081/" class="transparent" style="width:100%;
- border-radius: 10px;padding-top: 10px;
-  padding-bottom: 10px;">
+        <img src="http://192.168.1.19:8081/1" alt="Imagem da câmera externa" class="cam-viewport">
     </div>
     <script>
         console.log('Hello World!');
