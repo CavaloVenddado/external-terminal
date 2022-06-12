@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<body>
-        <style>
-.scroll-left {
- height: 100px;	
- overflow: hidden;
- position: relative;
- background: white;
- color: black;
- border: 1px solid black;
- border-radius: 10px;
-}
-.scroll-left p {
- position: absolute;
- width: 280;
- height: 100%;
- margin: 0;
- line-height: 100px;
- text-align: center;
- font-size: 80px;
- /* Starting position */
- transform:translateX(100%);
- /* Apply animation to this element */
- animation: scroll-left 15s linear infinite;
-}
-/* Move it (define the animation) */
-@keyframes scroll-left {
- 0%   {
- transform: translateX(40%); 		
- }
- 100% {
- transform: translateX(-100%); 
- }
-}
-</style>
 
-<div class="scroll-left">
-<p>Bem vindo a robótica Marista! Equipe Cavalo Vendado. Passe o cartão abaixo ou mostre sua face para a camera!</p>
-</div>
-	<div>
-    <img src="http://192.168.1.19:8081/1"
-    alt="http://192.168.1.19:8081/" class="transparent"
-    style="width:100%;
+<body>
+    <style>
+        .scroll-left {
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .scroll-left p {
+            position: absolute;
+            width: 280;
+            height: 100%;
+            margin: 0;
+            line-height: 100px;
+            text-align: center;
+            font-size: 80px;
+            /* Starting position */
+            transform: translateX(100%);
+            /* Apply animation to this element */
+            animation: scroll-left 15s linear infinite;
+        }
+
+        /* Move it (define the animation) */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(40%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+
+    <div class="scroll-left">
+        <p>Bem vindo a robótica Marista! Equipe Cavalo Vendado. Passe o cartão abaixo ou mostre sua face para a camera!</p>
+    </div>
+    <div>
+        <img src="http://192.168.1.19:8081/1" alt="http://192.168.1.19:8081/" class="transparent" style="width:100%;
  border-radius: 10px;padding-top: 10px;
   padding-bottom: 10px;">
     </div>
     <script>
-    console.log('Hello World!');
-    var socket = new WebSocket('ws://192.168.1.12:1880/term/socket');
-    socket.onopen = function(event) {
-        console.log('WebSocket is connected.');
-    };
-    socket.onmessage = function (e) {
-    	console.log('Server: ' + e.data);
-    };
+        console.log('Hello World!');
+        var socket = new WebSocket('ws://192.168.1.12:1880/term/socket');
+        socket.onopen = function (event) {
+            console.log('WebSocket is connected.');
+        };
+        socket.onmessage = function (e) {
+            console.log('Server: ' + e.data);
+        };
     </script>
-	</body>
+</body>
+
 </html>
