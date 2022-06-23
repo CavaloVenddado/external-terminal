@@ -14,7 +14,7 @@ const Commands = {
 }
 
 /*connect to JARVIS websocket*/
-var socket = new WebSocket('ws://raspi2server:1880/term/socket');
+var socket = new WebSocket('ws://192.168.1.12:1880/term/socket');
 
 
 
@@ -33,15 +33,15 @@ socket.onmessage = function (e) {
     switch(req.event){
         case Commands.OpenByUser:
             //finds and sets source value
-            mydiv.getElementsByTagName("source")[0].src = "media/cadeado_aberto0001-0120.mp4";
+            mydiv.getElementsByTagName("source")[0].src = "term/media/cadeado_aberto0001-0120.mp4";
             break;
         case Commands.OpenByCard:
             //finds and sets source value
-            mydiv.getElementsByTagName("source")[0].src = "media/cadeado_aberto_cartao0001-0120.mp4";
+            mydiv.getElementsByTagName("source")[0].src = "term/media/cadeado_aberto_cartao0001-0120.mp4";
             break;
         case Commands.OpenByFace:
             //finds and sets source value
-            mydiv.getElementsByTagName("source")[0].src = "media/cadeado_aberto_face0001-0120.mp4";
+            mydiv.getElementsByTagName("source")[0].src = "term/media/cadeado_aberto_face0001-0120.mp4";
             break;
         default:
             return;
