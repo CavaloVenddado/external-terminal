@@ -16,10 +16,13 @@ const Commands = {
 /*connect to JARVIS websocket*/
 var socket = new WebSocket('ws://192.168.1.12:1880/term/socket');
 
-
+socket.onclose = function(event){
+    console.log('WebSocket broken!!');
+    document.location.reload(true);
+}
 
 socket.onopen = function (event) {
-    console.log('WebSocket is connected! Protocol:' + socket.protocol);
+    console.log('WebSocket is connected!');
 };
 
 socket.onmessage = function (e) {
